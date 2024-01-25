@@ -5,6 +5,8 @@
     "packages/*"
   ],
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
     "turbo": "^1.10.16"
   },
   "scripts": {

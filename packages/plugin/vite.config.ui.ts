@@ -3,8 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
-import { exec } from "child_process";
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const isDev = mode === "development";
@@ -17,15 +15,12 @@ export default defineConfig(({ mode }) => {
         },
       }),
       viteSingleFile(),
-      {
-        name: "post-build-command",
-        closeBundle: async () => {
-          console.log("Update manifest.json");
-          // exec(
-          //   "cat manifest.json > temp.json && cat temp.json > manifest.json && rm temp.json"
-          // );
-        },
-      },
+      // {
+      //   name: "post-build-command",
+      //   closeBundle: async () => {
+      //     console.log("Update manifest.json");
+      //   },
+      // },
     ],
     build: {
       outDir: "dist/ui",

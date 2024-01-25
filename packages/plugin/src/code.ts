@@ -1,10 +1,11 @@
-import { postToUI, PostMessage } from "./common/msg";
+import { postToUI, PostMessage, VarMap } from "./common/msg";
+import { getNormalizedCollections } from "./common/utils";
 // Figma Documentation Links:
 // https://www.figma.com/plugin-docs/how-plugins-run
 // https://www.figma.com/plugin-docs/api/api-reference/
 
 figma.showUI(__html__, { themeColors: true });
-figma.ui.resize(500, 800);
+figma.ui.resize(800, 600);
 
 const settings = {
   includeLibraries: false,
@@ -12,17 +13,24 @@ const settings = {
 
 const getFigmaData = async () => {
   console.log("GET FIGMA DATA", settings);
+  const collections = getNormalizedCollections();
+  const variables: VarMap = {};
+  collections.forEach((collection) => {
+    collection.variables.forEach((variable) => {
+      variables[variable.id] = variable;
+    });
+  });
 
   const payload = {
     fileKey: figma.fileKey || "Unknown",
     currentUser: (figma.currentUser && figma.currentUser.name) || "Unknown",
+    collections,
+    variables,
   };
   console.log("Plugin:");
   console.log(payload);
   postToUI(payload);
 };
-
-getFigmaData();
 
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
