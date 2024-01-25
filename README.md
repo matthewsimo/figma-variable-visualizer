@@ -1,6 +1,6 @@
-# Figma Plugin Template Project
+# Figma Variable Visulizer
 
-This is a template project that aims to accelerate Figma Plugin Development.
+Not sure what this is yet, but hope it makes it easier to see how Figma Vars relate to each other and whatever system you are building.
 
 It's a monorepo with two packages:
 
