@@ -16,10 +16,17 @@
     "preview": "bunx --bun vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "cmdk": "^0.2.1",
+    "lucide-react": "^0.323.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "reactflow": "^11.10.1"
+    "reactflow": "^11.10.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.81.0",

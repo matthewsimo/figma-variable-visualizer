@@ -1,5 +1,5 @@
 {
-  "name": "figma-plugin-project",
+  "name": "figma-variable-visualizer",
   "version": "1.0.0",
   "workspaces": [
     "packages/*"
